@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scraped Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h2>Scraped Data for {{ country }}</h2>
+        {{ table_html|safe }}
+        <br /><br />
+        <a href="{{ url_for('download') }}?file={{ filename }}" class="button">Download CSV</a>
+        <a href="{{ url_for('home') }}" class="button">Back</a>
+    </div>
+</body>
+</html>

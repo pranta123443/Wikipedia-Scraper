@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wikipedia Scraper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Wikipedia Demographics Scraper</h2>
+        <form method="post" action="/scrape" onsubmit="showLoader()">
+            <label for="country">Select Country</label>
+            <select name="country">
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="India">India</option>
+                <option value="China">China</option>
+                <option value="Myanmar">Myanmar</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Nepal">Nepal</option>
+            </select>
+             <label for="rows">Max Pages</label>
+    <select id="rows" name="rows" required>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="all">All</option>
+    </select>
+            <input type="hidden" name="section" value="demographics">
+            <input type="submit" value="Scrape">
+        </form>
+        <br>
+        <div id="loader-bar">
+    <div id="loader-fill"></div>
+    <span id="loader-text">Scraping...</span>
+</div>
+        <br><br>
+        <a href="/logout">Logout</a>
+    </div>
+</body>
+</html>

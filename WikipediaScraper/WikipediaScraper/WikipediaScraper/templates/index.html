@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scraped Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff;
+            padding: 40px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            margin: 0 8px;
+            font-size: 14px;
+        }
+
+        .buttons a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Scraped Data for {{ country }}</h2>
+
+    {{ table|safe }}
+
+    <div class="buttons">
+        <a href="{{ url_for('download', file=filename) }}">Download CSV</a>
+        <a href="/">Back</a>
+    </div>
+
+</body>
+</html>
